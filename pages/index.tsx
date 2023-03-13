@@ -17,6 +17,7 @@ export default function Home() {
       </Head>
       <div>
         <Sidebar />
+        <h2>Hello Here is the entry Point of our App</h2>
       </div>
     </>
   )

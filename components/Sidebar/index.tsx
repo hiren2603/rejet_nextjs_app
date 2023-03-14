@@ -26,7 +26,7 @@ import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
 import EWestSvg from './EWestSvg';
 import CallIcon from '@mui/icons-material/Call';
 
-const drawerWidth = 340;
+const drawerWidth = 250;
 
 const openedMixin = (theme: Theme): CSSObject => ({
   width: drawerWidth,

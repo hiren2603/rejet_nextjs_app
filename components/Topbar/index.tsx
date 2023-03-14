@@ -13,10 +13,10 @@ import CustomButton from "../CustomButton";
 
 function Topbar() {
   return (
-    <AppBar position="static" sx={{background: 'transparent', height: '80px' }}>
+    <AppBar position="static" sx={{background: 'transparent', height: '60px' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters sx={{display: 'flex', justifyContent: 'space-between'}}>
-         <Image src={Logo} alt="logo" height={60} width={180}/>
+         <Image src={Logo} alt="logo" height={50}/>
           <Box sx={{ flexGrow: 3, display: "flex", justifyContent: 'flex-end' }}>
             <CustomButton buttonText="Send Mail" buttonIcon={<MailIcon />} customClass={{marginRight: 2}}/>
             <CustomButton buttonText="Call Now" buttonIcon={<CallIcon />} />

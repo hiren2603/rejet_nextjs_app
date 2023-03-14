@@ -8,6 +8,7 @@ import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 import Image from "next/image";
 import Logo from "../../public/assets/logo.png"
+import CustomButton from "../CustomButton";
 
 
 function Topbar() {
@@ -17,12 +18,8 @@ function Topbar() {
         <Toolbar disableGutters sx={{display: 'flex', justifyContent: 'space-between'}}>
          <Image src={Logo} alt="logo" height={60} width={180}/>
           <Box sx={{ flexGrow: 3, display: "flex", justifyContent: 'flex-end' }}>
-            <Button variant="outlined" sx={{mr: 2}} startIcon={<MailIcon />}>
-              Send Mail
-            </Button>
-            <Button variant="outlined" startIcon={<CallIcon />}>
-              Call Now
-            </Button>
+            <CustomButton buttonText="Send Mail" buttonIcon={<MailIcon />} customClass={{marginRight: 2}}/>
+            <CustomButton buttonText="Call Now" buttonIcon={<CallIcon />} />
           </Box>
         </Toolbar>
       </Container>

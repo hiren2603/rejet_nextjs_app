@@ -30,7 +30,7 @@ const drawerWidth = 250;
 
 const openedMixin = (theme: Theme): CSSObject => ({
   width: drawerWidth,
-  backgroundColor: '#E31E25',
+  backgroundColor: `#E31E25`,
   color: 'white',
   transition: theme.transitions.create('width', {
     easing: theme.transitions.easing.sharp,
@@ -45,7 +45,7 @@ const closedMixin = (theme: Theme): CSSObject => ({
     duration: theme.transitions.duration.leavingScreen,
   }),
   overflowX: 'hidden',
-  backgroundColor: '#E31E25',
+  backgroundColor: `#E31E25`,
   color: 'white',
   width: `calc(${theme.spacing(7)} + 1px)`,
   [theme.breakpoints.up('sm')]: {
@@ -94,8 +94,7 @@ export default function MiniDrawer() {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-
-      <Drawer variant="permanent" open={open}>
+      <Drawer variant="permanent"open={open}> 
         <DrawerHeader>
 
           {

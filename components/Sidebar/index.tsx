@@ -37,6 +37,7 @@ const openedMixin = (theme: Theme): CSSObject => ({
     duration: theme.transitions.duration.enteringScreen,
   }),
   overflowX: 'hidden',
+  top: '80px',
 });
 
 const closedMixin = (theme: Theme): CSSObject => ({
@@ -47,6 +48,7 @@ const closedMixin = (theme: Theme): CSSObject => ({
   overflowX: 'hidden',
   backgroundColor: `#E31E25`,
   color: 'white',
+  top: '80px',
   width: `calc(${theme.spacing(7)} + 1px)`,
   [theme.breakpoints.up('sm')]: {
     width: `calc(${theme.spacing(8)} + 1px)`,
@@ -68,6 +70,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
     flexShrink: 0,
     whiteSpace: 'nowrap',
     boxSizing: 'border-box',
+    
     ...(open && {
       ...openedMixin(theme),
       '& .MuiDrawer-paper': openedMixin(theme),
@@ -96,7 +99,6 @@ export default function MiniDrawer() {
       <CssBaseline />
       <Drawer variant="permanent"open={open}> 
         <DrawerHeader>
-
           {
             open ?
               <Stack>
@@ -104,16 +106,13 @@ export default function MiniDrawer() {
                   <ChevronLeftIcon sx={{ color: 'white' }} />
                 </IconButton>
               </Stack>
-
               :
-
               <Stack>
                 <IconButton onClick={handleDrawerOpen}>
                   <ChevronRightIcon sx={{ color: 'white' }} />
                 </IconButton>
               </Stack>
           }
-
         </DrawerHeader>
         <Divider />
         <List>

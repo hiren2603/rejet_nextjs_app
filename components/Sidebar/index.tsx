@@ -1,23 +1,17 @@
 import * as React from 'react';
-import { styled, useTheme, Theme, CSSObject } from '@mui/material/styles';
+import { styled, useTheme, Theme, CSSObject, makeStyles, createStyles } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import MuiDrawer from '@mui/material/Drawer';
-import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
 import CssBaseline from '@mui/material/CssBaseline';
-import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
 import { Stack } from '@mui/system';
 import HomeIcon from '@mui/icons-material/Home';
 import AutoStoriesIcon from '@mui/icons-material/AutoStories';
@@ -37,7 +31,7 @@ const openedMixin = (theme: Theme): CSSObject => ({
     duration: theme.transitions.duration.enteringScreen,
   }),
   overflowX: 'hidden',
-  top: '80px',
+  top: '60px',
 });
 
 const closedMixin = (theme: Theme): CSSObject => ({
@@ -48,7 +42,7 @@ const closedMixin = (theme: Theme): CSSObject => ({
   overflowX: 'hidden',
   backgroundColor: `#E31E25`,
   color: 'white',
-  top: '80px',
+  top: '60px',
   width: `calc(${theme.spacing(7)} + 1px)`,
   [theme.breakpoints.up('sm')]: {
     width: `calc(${theme.spacing(8)} + 1px)`,
@@ -70,7 +64,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
     flexShrink: 0,
     whiteSpace: 'nowrap',
     boxSizing: 'border-box',
-    
+
     ...(open && {
       ...openedMixin(theme),
       '& .MuiDrawer-paper': openedMixin(theme),
@@ -82,7 +76,10 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
+
+
 export default function MiniDrawer() {
+
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
@@ -97,12 +94,13 @@ export default function MiniDrawer() {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <Drawer variant="permanent"open={open}> 
+      <Drawer variant="permanent" open={open}>
         <DrawerHeader>
           {
             open ?
               <Stack>
                 <IconButton onClick={handleDrawerClose}>
+                  <ChevronLeftIcon sx={{ color: 'white', position:'absolute', left:'2px' }} />
                   <ChevronLeftIcon sx={{ color: 'white' }} />
                 </IconButton>
               </Stack>
@@ -123,6 +121,7 @@ export default function MiniDrawer() {
                   minHeight: 48,
                   justifyContent: open ? 'initial' : 'center',
                   px: 2.5,
+                  '&:hover':{background:'linear-gradient(145deg, #E31E25, #E31E25);',boxShadow:'inset 0px 0px 0px black, inset 0px 0px 9px black',transition: '0.2s ease-in-out',transform:'scale(1.1)'}
                 }}
               >
                 <ListItemIcon

@@ -1,12 +1,6 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
-import Sidebar from '@/components/Sidebar';
-import { red } from '@mui/material/colors';
+import { ThemeProvider } from '@mui/material/styles';
+import Head from 'next/head';
 import theme from "../components/Theme/Theme";
-import { ThemeProvider, createTheme } from '@mui/material/styles';
-import Topbar from '@/components/Topbar';
 
 
 
@@ -21,9 +15,7 @@ export default function Home() {
           <link rel="icon" href="/re.png" />
         </Head>
         <div>
-          <Topbar />
-          <Sidebar />
-          <h2>Hello Here is the entry Point of our Application</h2>
+          <h2>Home Page</h2>
         </div>
       </ThemeProvider>
     </>

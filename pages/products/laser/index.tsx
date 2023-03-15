@@ -2,7 +2,7 @@ import React from 'react'
 
 const Laser = () => {
   return (
-    <div>Laser</div>
+    <h2>Laser</h2>
   )
 }
 

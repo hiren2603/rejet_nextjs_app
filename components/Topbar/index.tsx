@@ -15,9 +15,9 @@ function Topbar() {
   return (
     <AppBar position="static" sx={{ background: 'primary', height: '60px'}}>
       <Container sx={{maxWidth:'1900px!important'}} >
-        <Toolbar disableGutters sx={{ display: 'flex', justifyContent: 'space-between', pl: 5, pr: 5 }}>
+        <Toolbar disableGutters sx={{ display: 'flex', justifyContent: 'space-between' }}>
           <Image src={Logo} alt="logo" height={50} />
-          <Box sx={{ display: "flex", justifyContent: 'flex-end' }}>
+          <Box sx={{ flexGrow: 3, display: "flex", justifyContent: 'flex-end' }}>
             <CustomButton variant={'outlined'} buttonText="Send Mail" color={"error"} buttonIcon={<MailIcon />} customClass={{ marginRight: 2 }} />
             <CustomButton variant={'contained'} buttonText="Call Now" color={"error"} buttonIcon={<CallIcon />} />
           </Box>

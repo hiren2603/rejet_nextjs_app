@@ -1,13 +1,11 @@
 import * as React from 'react';
-import { styled, useTheme, Theme, CSSObject, makeStyles, createStyles } from '@mui/material/styles';
+import { styled, useTheme, Theme, CSSObject } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import MuiDrawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
@@ -19,6 +17,8 @@ import ProductSvg from './ProductSvg';
 import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
 import EWestSvg from './EWestSvg';
 import CallIcon from '@mui/icons-material/Call';
+import KeyboardDoubleArrowRightIcon  from '@mui/icons-material/KeyboardDoubleArrowRight';
+import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrowLeft';
 
 const drawerWidth = 250;
 
@@ -54,7 +54,6 @@ const DrawerHeader = styled('div')(({ theme }) => ({
   alignItems: 'center',
   justifyContent: 'flex-end',
   padding: theme.spacing(0, 1),
-  // necessary for content to be below app bar
   ...theme.mixins.toolbar,
 }));
 
@@ -100,14 +99,13 @@ export default function MiniDrawer() {
             open ?
               <Stack>
                 <IconButton onClick={handleDrawerClose}>
-                  <ChevronLeftIcon sx={{ color: 'white', position:'absolute', left:'2px' }} />
-                  <ChevronLeftIcon sx={{ color: 'white' }} />
+                  <KeyboardDoubleArrowLeftIcon sx={{ color : "white"}} />
                 </IconButton>
               </Stack>
               :
               <Stack>
                 <IconButton onClick={handleDrawerOpen}>
-                  <ChevronRightIcon sx={{ color: 'white' }} />
+                  <KeyboardDoubleArrowRightIcon sx={{ color: 'white' }} />
                 </IconButton>
               </Stack>
           }
@@ -121,7 +119,7 @@ export default function MiniDrawer() {
                   minHeight: 48,
                   justifyContent: open ? 'initial' : 'center',
                   px: 2.5,
-                  '&:hover':{background:'linear-gradient(145deg, #E31E25, #E31E25);',boxShadow:'inset 0px 0px 0px black, inset 0px 0px 9px black',transition: '0.2s ease-in-out',transform:'scale(1.1)'}
+                  '&:hover': { background: 'linear-gradient(145deg, #E31E25, #E31E25);', boxShadow: 'inset 0px 0px 0px black, inset 0px 0px 9px black', transition: '0.2s ease-in-out', transform: 'scale(1.1)' }
                 }}
               >
                 <ListItemIcon

@@ -1,6 +1,9 @@
-import { ThemeProvider } from '@mui/material/styles';
-import Head from 'next/head';
+import Head from 'next/head'
+import Sidebar from '@/components/Sidebar';
 import theme from "../components/Theme/Theme";
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import Topbar from '@/components/Topbar';
+import { Box } from '@mui/material';
 
 
 
@@ -14,9 +17,11 @@ export default function Home() {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="icon" href="/re.png" />
         </Head>
-        <div>
-          <h2>Home Page</h2>
-        </div>
+        <Box>
+          <Topbar />
+          <Sidebar />
+          <h2>Hello Here is the entry Point of our Application</h2>
+        </Box>
       </ThemeProvider>
     </>
   )

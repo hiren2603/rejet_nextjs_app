@@ -6,12 +6,14 @@ import { ReactNode } from 'react';
 interface Props {
   buttonText: string,
   buttonIcon?: ReactNode,
-  customClass?: React.CSSProperties
+  customClass?: React.CSSProperties,
+  color: "primary" | "inherit" | "secondary" | "success" | "error" | "info" | "warning",
+  variant: "text" | "outlined" | "contained"
 }
 
-const CustomButton = ({buttonText, buttonIcon, customClass}: Props) => {
+const CustomButton = ({ buttonText, variant, buttonIcon, customClass, color = "primary" }: Props) => {
   return (
-    <Button variant="outlined" startIcon={buttonIcon} sx={customClass}>
+    <Button variant={variant} color={color} startIcon={buttonIcon} sx={customClass}>
       {buttonText}
     </Button>
   )

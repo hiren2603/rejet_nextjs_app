@@ -1,12 +1,9 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
 import Sidebar from '@/components/Sidebar';
-import { red } from '@mui/material/colors';
 import theme from "../components/Theme/Theme";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Topbar from '@/components/Topbar';
+import { Box } from '@mui/material';
 
 
 
@@ -20,11 +17,11 @@ export default function Home() {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="icon" href="/re.png" />
         </Head>
-        <div>
+        <Box>
           <Topbar />
           <Sidebar />
           <h2>Hello Here is the entry Point of our Application</h2>
-        </div>
+        </Box>
       </ThemeProvider>
     </>
   )

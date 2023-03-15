@@ -8,7 +8,6 @@ import theme from "../components/Theme/Theme";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Topbar from '@/components/Topbar';
 
-const inter = Inter({ subsets: ['latin'] });
 
 
 export default function Home() {
@@ -24,7 +23,7 @@ export default function Home() {
         <div>
           <Topbar />
           <Sidebar />
-          <h2>Hello Here is the entry Point of our App</h2>
+          <h2>Hello Here is the entry Point of our Application</h2>
         </div>
       </ThemeProvider>
     </>

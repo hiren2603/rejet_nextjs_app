@@ -4,7 +4,6 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import MailIcon from "@mui/icons-material/Mail";
 import CallIcon from '@mui/icons-material/Call';
-import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 import Image from "next/image";
 import Logo from "../../public/assets/logo.png"

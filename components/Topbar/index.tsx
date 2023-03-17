@@ -13,7 +13,7 @@ import theme from "../Theme/Theme";
 
 function Topbar() {
   return (
-    <AppBar position="static" sx={{ background: 'primary', height: '60px'}}>
+    <AppBar position="static" sx={{ background: 'primary', height: '60px', marginLeft: "4%", width: "96%" }}>
       <Container sx={{maxWidth:'1900px!important'}} >
         <Toolbar disableGutters sx={{ display: 'flex', justifyContent: 'space-between' }}>
           <Image src={Logo} alt="logo" height={50} />

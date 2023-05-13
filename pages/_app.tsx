@@ -1,19 +1,19 @@
-import theme from "../components/Theme/Theme";
-import Sidebar from '@/components/Sidebar';
-import Topbar from '@/components/Topbar';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+import Layout from "@/components/Layout";
+import "@/styles/globals.css";
 import { Stack } from "@mui/material";
-import type { AppProps } from 'next/app'
-import '@/styles/globals.css'
+import { ThemeProvider } from "@mui/material/styles";
+import type { AppProps } from "next/app";
+import theme from "../components/Theme/Theme";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={theme}>
-        <Topbar />
-      <Stack direction="row">
-        <Sidebar />
-        <Component {...pageProps} />
-      </Stack>
+      <>
+        <Layout />
+        <Stack sx={{ mt: "64px" }}>
+          <Component {...pageProps} />
+        </Stack>
+      </>
     </ThemeProvider>
-  )
+  );
 }

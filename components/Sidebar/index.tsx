@@ -40,15 +40,14 @@ export default function MiniDrawer(props: MiniDrawerPropsType) {
     open,
     openSubcategory,
     openCategory,
-    setOpen,
-    setOpenCategory,
-    setOpenSubcategory,
     handleCategory,
     handleDrawerOpen,
     handleSubCategory,
     closeSideBar,
     drawerWidth,
   } = props;
+
+  const { inkjet, laser, thermal } = openCategory;
 
   const openedMixin = (theme: Theme): CSSObject => ({
     width: drawerWidth,
@@ -92,6 +91,7 @@ export default function MiniDrawer(props: MiniDrawerPropsType) {
     whiteSpace: "nowrap",
     boxSizing: "border-box",
     border: "1px solid black",
+    transition: "all 1s ease-int-out",
     "&::scrollbar": {
       width: "5px",
     },
@@ -109,7 +109,7 @@ export default function MiniDrawer(props: MiniDrawerPropsType) {
     <>
       <Box sx={{ display: "flex" }} onKeyDown={closeSideBar}>
         <CssBaseline />
-        {/* <Topbar/> */}
+
         <ClickAwayListener onClickAway={closeSideBar}>
           <Drawer
             variant="permanent"
@@ -142,7 +142,7 @@ export default function MiniDrawer(props: MiniDrawerPropsType) {
                           <List>
                             <ListItemButton
                               sx={{ ...listButtonStyle, px: open ? 2.5 : 5.3 }}
-                              onClick={handleCategory}
+                              onClick={() => handleCategory(item.componentKey)}
                             >
                               <ListItemIcon
                                 sx={{ ...listIconStyle, mr: open ? 3 : "auto" }}
@@ -181,7 +181,11 @@ export default function MiniDrawer(props: MiniDrawerPropsType) {
                                           },
                                         }}
                                         key={innerItem.id}
-                                        onClick={handleSubCategory}
+                                        onClick={() =>
+                                          handleSubCategory(
+                                            innerItem.componentKey
+                                          )
+                                        }
                                       >
                                         <ListItemIcon
                                           sx={{
@@ -194,13 +198,21 @@ export default function MiniDrawer(props: MiniDrawerPropsType) {
                                         <ListItemText>
                                           {innerItem.key}
                                         </ListItemText>
-                                        {openSubcategory ? (
+                                        {openSubcategory[
+                                          innerItem.componentKey
+                                        ] ? (
                                           <ExpandLess />
                                         ) : (
                                           <ExpandMore />
                                         )}
                                       </ListItemButton>
-                                      <Collapse in={openSubcategory}>
+                                      <Collapse
+                                        in={
+                                          openSubcategory[
+                                            innerItem.componentKey
+                                          ]
+                                        }
+                                      >
                                         {innerItem.innercomponent?.map(
                                           (innnerComponent) => {
                                             return (

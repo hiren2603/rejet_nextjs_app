@@ -1,0 +1,47 @@
+.cardImage {
+  transition: all 0.5 ease;
+  height: 300px;
+  width: 80%;
+  object-fit: cover;
+}
+
+.cardImage:hover {
+  transform: scale(1.2);
+  transition: all 0.5s ease;
+}
+
+.show {
+  position: absolute;
+  display: none;
+  text-decoration: none;
+}
+
+.cardImage:hover + .show {
+  position: absolute;
+  display: flex;
+  color: rgb(0, 0, 0);
+  opacity: 1;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.cardButton {
+  color: #fff;
+  overflow-x: hidden;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 3px;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 550px) {
+  .cardImage {
+    height: 300px;
+    width: 80%;
+  }
+
+  .cardButton {
+    height: 50px;
+  }
+}
